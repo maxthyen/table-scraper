@@ -1,7 +1,12 @@
 # table-scraper
 Simple utility for scraping data from html tables on a given website into a list of javascript objects.
 
-## methods
+### installation
+```
+npm install --save table-scraper
+```
+
+### methods
 
 ##### get(*url*)
 Returns a promise that resolves to a list of tables found on the input website. HTML table rows are converted to

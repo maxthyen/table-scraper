@@ -1,6 +1,6 @@
 {
   "name": "table-scraper",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Easily scrape any website's html table data into an array of JavaScript objects.",
   "main": "index.js",
   "repository": "https://github.com/maxthyen/table-scraper.git",
