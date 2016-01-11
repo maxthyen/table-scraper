@@ -1,10 +1,10 @@
 describe('table-scraper', function() {
   'use strict';
 
-  const fs = require('fs');
-  const expect = require('chai').expect;
-  const nock = require('nock');
-  const scraper = require('../index');
+  var fs = require('fs');
+  var expect = require('chai').expect;
+  var nock = require('nock');
+  var scraper = require('../index');
 
   var singleTablePage;
   var multipleTablePage;
