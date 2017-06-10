@@ -1,7 +1,9 @@
 'use strict';
 var request = require('request');
 var xray = require('x-ray')();
-var tabletojson = require('tabletojson');
+
+// temporary...revert if PR to handle duplicate column headers is accepted
+var tabletojson = require('./tabletojson');
 
 module.exports.get = function get(url) {
   return new Promise(function(resolve, reject) {
