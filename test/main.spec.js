@@ -20,8 +20,8 @@ describe('table-scraper', function() {
   beforeEach(function() {
     // Matches the fake data found in the mock html pages
     tableData = [
-      {State: 'Minnesota', 'Capitol City': 'Saint Paul', 'Pop.': '3'},
-      {State: 'New York', 'Capitol City': 'Albany', 'Pop.': 'Eight Million'}
+      {State: 'Minnesota', 'Capital City': 'Saint Paul', 'Pop.': '3'},
+      {State: 'New York', 'Capital City': 'Albany', 'Pop.': 'Eight Million'}
     ];
     nock(fakeUrl).get('/single').reply(200, singleTablePage);
     nock(fakeUrl).get('/multi').reply(200, multipleTablePage);

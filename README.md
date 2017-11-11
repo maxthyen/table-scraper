@@ -21,7 +21,7 @@ For example: suppose the website at `http://www.some-fake-url.com` consisted of 
 <body>
   <table>
     <thead>
-    <tr><th>State</th><th>Capitol City</th><th>Pop.<th></tr>
+    <tr><th>State</th><th>Capital City</th><th>Pop.<th></tr>
     </thead>
     <tbody>
     <tr><td>Minnesota</td><td>Saint Paul</td><td>3</td></tr>
@@ -43,8 +43,8 @@ scraper
        tableData === 
         [ 
           [ 
-            { State: 'Minnesota', 'Capitol City': 'Saint Paul', 'Pop.': '3' },
-            { State: 'New York', 'Capitol City': 'Albany', 'Pop.': 'Eight Million' } 
+            { State: 'Minnesota', 'Capital City': 'Saint Paul', 'Pop.': '3' },
+            { State: 'New York', 'Capital City': 'Albany', 'Pop.': 'Eight Million' } 
           ] 
         ]
     */
