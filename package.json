@@ -1,6 +1,6 @@
 {
   "name": "table-scraper",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "Easily scrape any website's html table data into an array of JavaScript objects.",
   "main": "index.js",
   "repository": "https://github.com/maxthyen/table-scraper.git",
@@ -19,6 +19,7 @@
   "author": "Max Thyen",
   "license": "MIT",
   "dependencies": {
+    "cheerio": "^1.0.0-rc.1",
     "request": "^2.67.0",
     "tabletojson": "^0.4.0",
     "x-ray": "^2.0.3"

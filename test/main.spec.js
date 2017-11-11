@@ -8,12 +8,14 @@ describe('table-scraper', function() {
 
   var singleTablePage;
   var multipleTablePage;
+  var duplicateHeaders;
   var fakeUrl;
   var tableData;
 
   before(function() {
     singleTablePage = fs.readFileSync(__dirname + '/singleTablePage.html', 'utf8');
-    multipleTablePage= fs.readFileSync(__dirname + '/multiTablePage.html', 'utf8');
+    multipleTablePage = fs.readFileSync(__dirname + '/multiTablePage.html', 'utf8');
+    duplicateHeaders = fs.readFileSync(__dirname + '/duplicateHeaders.html', 'utf8');
     fakeUrl = 'https://www.url.com';
   });
 
@@ -25,6 +27,7 @@ describe('table-scraper', function() {
     ];
     nock(fakeUrl).get('/single').reply(200, singleTablePage);
     nock(fakeUrl).get('/multi').reply(200, multipleTablePage);
+    nock(fakeUrl).get('/duplicate').reply(200, duplicateHeaders);
     nock(fakeUrl).get('/404').reply(404);
   });
 
@@ -50,6 +53,21 @@ describe('table-scraper', function() {
               {'0': 'a', '1': 'b', '2': 'c'},
               {'0': '1', '1': '2', '2': '3'}
             ]
+          ]);
+          done();
+        })
+        .catch(function(err) { done(err); });
+  });
+
+  it('can handle duplicate headers', function(done) {
+    scraper
+        .get(fakeUrl + '/duplicate')
+        .then(function(response) {
+          expect(response).to.deep.equal([
+            [
+              {currency: 'usd/btc', x: '123', x_2: '800'},
+              {currency: 'usd/eth', x: '100', x_2: '1.5'},
+            ],
           ]);
           done();
         })
