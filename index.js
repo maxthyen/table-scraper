@@ -3,9 +3,14 @@ var request = require('request');
 var xray = require('x-ray')();
 var tabletojson = require('tabletojson');
 
-module.exports.get = function get(url) {
+module.exports.get = function get(url, options={}) {
   return new Promise(function(resolve, reject) {
-    request.get(url, function(err, response, body) {
+    const requestOptions = {
+      ...options,
+      method: 'GET',
+      url: url,
+    }
+    request.get(requestOptions, function(err, response, body) {
       if (err) {
         return reject(err);
       }
@@ -27,4 +32,3 @@ module.exports.get = function get(url) {
     })
   });
 };
-
