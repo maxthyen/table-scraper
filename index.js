@@ -1,7 +1,7 @@
 'use strict';
 var request = require('request');
 var xray = require('x-ray')();
-var tabletojson = require('tabletojson');
+var tabletojson = require('tabletojson').Tabletojson;
 
 module.exports.get = function get(url) {
   return new Promise(function(resolve, reject) {
