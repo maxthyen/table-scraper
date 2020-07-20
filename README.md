@@ -1,4 +1,4 @@
-![build status](https://travis-ci.org/maxthyen/table-scraper.svg)
+![build status](https://travis-ci.org/maxthyen/table-scraper.svg?branch=master)
 # table-scraper
 Simple utility for scraping data from html tables on a given website into a list of javascript objects.
 
